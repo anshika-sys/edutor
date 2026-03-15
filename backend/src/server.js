@@ -14,9 +14,8 @@ const app = express();
 app.use(cors({
   origin: [
     process.env.CLIENT_URL || 'http://localhost:5173',
-    'https://edutor.vercel.app',
     /\.vercel\.app$/,
-    /\.onrender\.com$/,
+    /\.up\.railway\.app$/,
   ],
   credentials: true,
 }));
