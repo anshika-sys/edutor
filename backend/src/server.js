@@ -11,7 +11,11 @@ const enrollmentRoutes = require('./routes/enrollmentRoutes');
 const app = express();
 
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [
+    process.env.CLIENT_URL || 'http://localhost:5173',
+    'https://edutor.vercel.app',
+    /\.vercel\.app$/,
+  ],
   credentials: true,
 }));
 app.use(express.json());
